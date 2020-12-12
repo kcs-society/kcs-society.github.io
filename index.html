@@ -5,10 +5,139 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-	<link rel="stylesheet" href="style.css">
+	<style>
+	body,
+	html {
+	  height: 100%;
+	  margin: 0;
+	  font-family: Arial, Helvetica, sans-serif;
+	}
 
+	* {
+	  box-sizing: border-box;
+	}
+
+	.cover-image {
+	  /* The image used */
+	  background-image: url("cover_main.jpg");
+
+	  /* Add the blur effect */
+	  filter: blur(10px) saturate(200%);
+	  -webkit-filter: blur(10px) saturate(200%);
+
+	  /* Full height */
+	  height: 100%;
+
+	  /* Center and scale the image nicely */
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+
+	  min-height: 500px;
+
+	  /* Create the parallax scrolling effect */
+	  background-attachment: fixed;
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+
+	/* Position text in the middle of the page/image */
+	.cover-text {
+	  background-color: rgb(0, 0, 0);
+	  /* Fallback color */
+	  background-color: rgba(0, 0, 0, 0.4);
+	  /* Black w/opacity/see-through */
+	  color: white;
+	  font-weight: bold;
+	  border: 3px solid #f1f1f1;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  z-index: 2;
+	  width: 80%;
+	  padding: 20px;
+	  text-align: center;
+	}
+
+	/*Gradient*/
+
+	#grad1 {
+	  height: 200px;
+	  background-color: red;
+	  /* For browsers that do not support gradients */
+	  background-image: linear-gradient(rgba(255, 0, 0, 0), rgba(255, 100, 0, 1));
+	  /* Standard syntax (must be last) */
+	}
+
+	/*Cover Immage*/
+
+	.cover {
+	  position: relative;
+	  width: 50%;
+	}
+
+	.image {
+	  display: block;
+	  width: 100%;
+	  height: auto;
+	}
+
+	.overlay {
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  height: 100%;
+	  width: 100%;
+	  opacity: 0;
+	  transition: .6s ease;
+	  background-color: #008CBA;
+	}
+
+	.cover:hover .overlay {
+	  opacity: 1;
+	}
+
+	.text {
+	  color: white;
+	  font-size: 20px;
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  -webkit-transform: translate(-50%, -50%);
+	  -ms-transform: translate(-50%, -50%);
+	  transform: translate(-50%, -50%);
+	  text-align: center;
+	}
+
+	/*Button*/
+
+	.btn {
+	  background-color: #2b9639a1;
+	  color: #fff;
+	  border: 1px solid transparent;
+	  padding: 10px 40px;
+	  font-size: 14px;
+	  font-weight: 300;
+	  -webkit-transition: all 0.3s ease 0s;
+	  -moz-transition: all 0.3s ease 0s;
+	  -o-transition: all 0.3s ease 0s;
+	  transition: all 0.3s ease 0s;
+	}
+
+	.btn:hover {
+	  background-color: transparent;
+	  border-color: #2b9639;
+	  color: #2b9639;
+	}
+
+	</style>
+	
 	<script>
-		var countDownDate = new Date("Oct 26, 2019 10:00:00").getTime();
+		var countDownDate = new Date("Dec 21, 2020 17:00:00").getTime();
 		var x = setInterval(function () {
 			var now = new Date().getTime();
 			var distance = countDownDate - now;
